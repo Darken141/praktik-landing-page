@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
+
+:root {
+  --primary-bg: #F5FAFE;
+  --primary-color: #234579;
+  --white: #fff;
+  --black: #000;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+
+  @media all and (max-width: 768px){
+    font-size: 61%;
+
+    @media all and (max-width: 480px){
+      font-size: 60%;
+    }
+  }
+
+}
+
+body {
+  background-color: #fff;
+  font-size: 1.8rem;
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.5;
+}
+
+main {
+  height: calc(100vh - 8rem);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+
+section {
+  flex-grow: 1;
+  padding: 0 3rem;
+
+  @media all and (max-width: 768px){
+    padding: 0 2rem;
+
+    @media all and (max-width: 480px){
+        padding: 0 1rem;
+
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  position: relative;
+  max-width: 135rem;
+  margin: 0 auto;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  // padding-top: 4rem;
+}
+
+h1 {
+  max-width: 40rem;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  line-height: 1.2;
+
+  @media all and (max-width: 768px){
+  font-size: 3.5rem;
+
+    @media all and (max-width: 480px){
+      font-size: 3rem;
+
+    }
+  }
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.3;
+  // margin-bottom: 2.5rem;
+
+  @media all and (max-width: 768px){
+    font-size: 2.5rem;
+
+    @media all and (max-width: 480px){
+      font-size: 2rem;
+
+    }
+  }
+}
+
+.email-form {
+  display: flex;
+  // justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 3rem;
+
+  button {
+    cursor: pointer;
+    display: inline;
+    padding: 1.2rem 3.7rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 1rem;
+    margin-left: 2rem;
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 3rem;
+
+  @media all and (max-height: 610px) {
+    overflow-y: scroll;
+
+  }
+
+  @media all and (max-width: 768px){
+    padding: 0 2rem;
+
+    @media all and (max-width: 480px){
+        padding: 0 1rem;
+
+    }
+  }
+
+  @mixin shrinkLabelStyles {
+    top: -14px;
+    font-size: 1.2rem;
+  }
+
+  .form-textarea {
+    position: relative;
+    margin: 2rem 0;
+    input[type="password"] {
+        letter-spacing: 0.3em;
+    }
+
+              
+
+      label {
+          font-size: 16px;
+          font-weight: normal;
+          position: absolute;
+          pointer-events: none;
+          left: 5px;
+          top: 10px;
+          transition: 300ms ease all;
+          &.shrink {
+              @include shrinkLabelStyles()
+          }
+      }
+      textarea {
+          resize: none;
+          font-family: inherit;
+          background-color: var(--primary-bg);
+          font-size: 18px;
+          padding: 10px 10px 10px 5px;
+          display: block;
+          width: 100%;
+          max-width: 70rem;
+          border: none;
+          border-radius: 0;
+          // margin: 25px 0;
+          margin: 0;
+          &:focus {
+              outline: none;
+          }
+          &:focus ~ label {
+              @include shrinkLabelStyles()
+
+          }
+      }
+      
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: inherit;
+  display: flex;
+  align-items: center;
+
+  svg {
+    font-size: 4rem;
+    margin-right: 1.5rem;
+  }
+
+  span {
+    display: block;
+  }
+}
+
+.bg-container {
+  position: absolute;
+  width: 50rem;
+  height: 50rem;
+  z-index: -1;
+  right: 0;
+  opacity: .30;
+
+  @media all and (max-width: 768px){
+    opacity: .20;
+    right: -20rem;
+
+    @media all and (max-width: 480px){
+      opacity: .20;
+      right: -25rem;
+    }
+  }
+
+  .bg-img {
+    width: 100%;
+  }
+}
